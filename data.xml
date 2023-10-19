@@ -1,0 +1,88 @@
+<root else="Ich habe dich leider nicht verstanden.">
+    <hallo>
+        <answer>hi</answer>
+    </hallo>
+
+    <was>
+        <muss>
+            <ich>
+                <beachten>
+                    <wenn>
+                        <ich>
+                            <anfangen>
+                                <möchte>
+                                    <geld>
+                                        <zu>
+                                            <investieren>1. Legen Sie Ziele fest
+                                                2. Legen Sie Ihren AnlagenHorizont fest
+                                                3. Werden Sie sich Ihrer Risikobilanz bewusst
+                                            </investieren>
+                                        </zu>
+                                    </geld>
+                                </möchte>
+                            </anfangen>
+                        </ich>
+                    </wenn>
+                </beachten>
+            </ich>
+        </muss>
+    </was>
+
+    <wie>
+        <kann>
+            <ich>
+                <geld>
+                    <überweisen goto="../../../../überweise"></überweisen>
+                </geld>
+            </ich>
+        </kann>
+    </wie>
+
+    <geld>
+        <überweisen goto="../überweise"></überweisen>
+    </geld>
+    <überweisung goto="überweise" />
+    <überweise>
+        <an else="Bitte geben Sie eine Adressen.">
+            <var name="iban">
+                <function>uberweisung</function>
+            </var>
+        </an>
+        <var name="betrag">
+            <an else="Bitte geben Sie eine Adressen.">
+                <var name="iban">
+                    <function>uberweisung</function>
+                </var>
+            </an>
+            <function>uberweisung</function>
+        </var>
+        <function>uberweisung</function>
+    </überweise>
+
+    <zeige>
+        <mir>
+            <statistiken goto="die/statistiken"/>
+            <die>
+                <statistiken>
+                    <der>
+                        <aktien goto="meist/gekauften/aktien"/>
+                        <meist>
+                            <gekauften>
+                                <aktien>
+                                    <answer>Hier sind einige Statistiken zu den meistgehandelten Aktien:
+
+                                        <b> - BYD:</b> Kurs 31,00€, Performance +3,21%, Umsatz 3.478.559€1
+                                        <b> - ASML Holding:</b> Kurs 559,40€, Performance -2,85%, Umsatz 2.383.189€1
+                                        <b> - NVIDIA:</b> Kurs 409,65€, Performance -1,41%, Umsatz 2.184.142€1
+                                        <b> - Deutsche Lufthansa:</b> Kurs 6,9610€, Performance -2,30%, Umsatz 1.815.540€1
+                                        <b> - Shell:</b> Kurs 32,45€, Performance +0,43%, Umsatz 1.310.117€1
+                                    </answer>
+                                </aktien>
+                            </gekauften>
+                        </meist>
+                    </der>
+                </statistiken>
+            </die>
+        </mir>
+    </zeige>
+</root>
