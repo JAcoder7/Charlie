@@ -1,6 +1,6 @@
 [
     {
-        "keywords": ["**Überweise Geld an die"],
+        "keywords": ["****überweisung","**Überweise Geld an die"],
         "function": "uberweisung"
     },
     {
@@ -16,7 +16,7 @@
         "answer": "In der Regel können Sie Ihre PIN in der Online-Banking-Schnittstelle ändern oder Sie müssen möglicherweise den Kundendienst kontaktieren, um dies zu tun."
     },
     {
-        "keywords": ["Wie kann ich Geld von meinem Postbank-Konto auf ein anderes Konto überweisen"],
+        "keywords": ["*Wie kann ich *Geld von meinem Postbank-Konto auf ein anderes Konto *überweisen"],
         "answer": "Geldüberweisungen können normalerweise über das Online-Banking-Portal der Postbank durchgeführt werden. Sie müssen die Kontodetails des Empfängers eingeben und den Betrag angeben, den Sie überweisen möchten."
     },
     {

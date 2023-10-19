@@ -79,6 +79,9 @@ body {
   background: lightgray;
   margin-top: -70px;
 }
+#input:focus-visible {
+  outline: none;
+}
 
 @keyframes typing {
   from {

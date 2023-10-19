@@ -18,10 +18,11 @@ function answer(text, mode = "left", color) {
     chatHistory.scrollTo(0, chatHistory.scrollHeight);
 }
 
-async function ask(text) {
+async function ask(text, type = "text") {
     if (text) {
         answer(text);
     }
+    input.type = type;
     return new Promise((resolve, reject) => {
         let keydown = e => {
             if (e.key == "Enter" && input.value != "") {
@@ -47,27 +48,33 @@ begin("Wie kann ich dir helfen?")
  * 
  * @param {string} input 
  */
-
 function evaluate(input) {
     let words = input.toLowerCase();
     words = words.split(" ");
     let probabilities = [];
     json.forEach(element => {
-        let p = 0;
-        words.forEach(word => {
-            let incl = levenshteinIncludes(element.keywords[0].replaceAll("*", "").toLowerCase().split(" "), word, 0.3);
-            if (incl[0]) {
-                let key = element.keywords[0].toLowerCase().split(" ")[incl[1]];
-                let a = 1;
-                while (key.startsWith("*")) {
-                    key = key.substring(1);
-                    a++;
-                }
+        let bestP = 0;
+        for (const keyword of element.keywords) {
+            let p = 0;
 
-                p += a;
+            words.forEach(word => {
+                let incl = levenshteinIncludes(keyword.replaceAll("*", "").toLowerCase().split(" "), word, 0.3);
+                if (incl[0]) {
+                    let key = keyword.toLowerCase().split(" ")[incl[1]];
+                    let a = 1;
+                    while (key.startsWith("*")) {
+                        key = key.substring(1);
+                        a++;
+                    }
+
+                    p += a;
+                }
+            });
+            if (bestP < p) {
+                bestP = p;
             }
-        });
-        probabilities.push(p);
+        }
+        probabilities.push(bestP);
     });
     let max = Math.max(...probabilities);
     let index = probabilities.indexOf(max);
@@ -121,22 +128,22 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
     return track[str2.length][str1.length];
 };
 
-async function uberweisung(input, vars = {}) {
+async function uberweisung(input) {
     let words = input.split(" ");
 
     let iban = null;
     if (words.includes("an")) {
         iban = words[words.indexOf("an") + 1];
-        if ((await ask(`Wollen Sie an die IBAN ${iban} überweisen? (Ja/Nein)`)).toLowerCase() != "ja") {
+        if ((await ask(`Wollen Sie an die IBAN <b>${iban}</b> überweisen? (Ja/Nein)`)).toLowerCase() != "ja") {
             iban = await ask("An welche IBAN wollen Sie überweisen?");
         }
     } else {
         iban = await ask("An welche IBAN wollen Sie überweisen?");
     }
 
-    let betrag = vars["betrag"];
+    let betrag = words.find(v=>v.includes("€"));
     if (betrag == undefined) {
-        betrag = await ask("Welchen Betrag wollen Sie überweisen?");
+        betrag = await ask("Welchen Betrag wollen Sie überweisen? (in €)", "number");
     }
     if (confirm(`Wollen Sie wirklich ${betrag} an ${iban} überweisen?\nDAS ÜBERWEISEN VON GELD IST UNWIEDERUFLICH!`)) {
         answer(`Es wurden <b>${betrag}</b> an <b>${iban}</b> überwiesen.`, undefined, "#b20707")

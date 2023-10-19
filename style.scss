@@ -83,6 +83,9 @@ body {
     border: 1px solid #EBEBEB;
     background: lightgray;
     margin-top: -70px;
+    &:focus-visible {
+        outline: none;
+    }
 }
 
 @keyframes typing {
