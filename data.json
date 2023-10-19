@@ -1,58 +1,225 @@
 [
     {
-        "keywords": ["****überweisung","**Überweise Geld an die"],
+        "keywords": [
+            "***überweisung",
+            "**Überweise *Geld *an"
+        ],
         "function": "uberweisung"
     },
     {
-        "keywords": ["Wie kann ich ein *Konto bei der Postbank *eröffnen"],
-        "answer": "Normalerweise können Sie ein Konto bei der Postbank eröffnen, indem Sie ihre Website besuchen und den Anweisungen für die Kontoeröffnung folgen. Sie werden wahrscheinlich aufgefordert, persönliche Informationen und Dokumente bereitzustellen."
+        "keywords": [
+            "Wie kann ich ein *Konto bei der Postbank *eröffnen"
+        ],
+        "answer": "Sie können ein Konto bei der Postbank eröffnen, indem Sie ihre Website besuchen und den Anweisungen für die Kontoeröffnung folgen. Sie werden wahrscheinlich aufgefordert, persönliche Informationen und Dokumente bereitzustellen."
     },
     {
-        "keywords": ["Was sind die *aktuellen *Zinssätze für *Sparbücher bei der Postbank"],
+        "keywords": [
+            "Was sind die *aktuellen *Zinssätze für *Sparbücher bei der Postbank"
+        ],
         "answer": "Die aktuellen Zinssätze können variieren und es ist am besten, die offizielle Website der Postbank oder ihren Kundendienst zu kontaktieren, um die genauesten Informationen zu erhalten. "
     },
     {
-        "keywords": ["Wie kann ich meine *PIN für mein Postbank *Konto *ändern"],
+        "keywords": [
+            "Wie kann ich meine *PIN für mein Postbank *Konto *ändern"
+        ],
         "answer": "In der Regel können Sie Ihre PIN in der Online-Banking-Schnittstelle ändern oder Sie müssen möglicherweise den Kundendienst kontaktieren, um dies zu tun."
     },
     {
-        "keywords": ["*Wie kann ich *Geld von meinem Postbank-Konto auf ein anderes Konto *überweisen"],
-        "answer": "Geldüberweisungen können normalerweise über das Online-Banking-Portal der Postbank durchgeführt werden. Sie müssen die Kontodetails des Empfängers eingeben und den Betrag angeben, den Sie überweisen möchten."
+        "keywords": [
+            "*Wie *überweise ich *Geld",
+            "Kann *ich **Geld an jemanden **senden",
+            "*Wie kann ich *Geld von meinem Postbank-Konto auf ein anderes Konto *überweisen"
+        ],
+        "answer": "Sie können Geld überweisen, indem Sie sich in Ihr Konto einloggen und die entsprechende Option auswählen. Sie müssen die Kontodetails des Empfängers eingeben und den Betrag angeben, den Sie überweisen möchten."
     },
     {
-        "keywords": ["Wie kann ich den *Kontostand meines Postbank *Kontos *überprüfen"],
+        "keywords": [
+            "Wie kann ich den *Kontostand meines Postbank *Kontos *überprüfen"
+        ],
         "answer": "Ihr Kontostand kann in der Regel durch Anmeldung in Ihrem Online-Banking-Konto eingesehen werden."
     },
     {
-        "keywords": ["statistik"],
-        "answer": "rgensdfnsd_3"
+        "keywords": [
+            "*Wo ist die *nächste Postbank *Bank **Filiale"
+        ],
+        "answer": "Die nächste Filiale befindet sich in der Adolph-Prior-Straße 11."
     },
     {
-        "keywords": ["übersicht"],
-        "answer": "rgensdfnsd_3"
+        "keywords": [
+            "***danke"
+        ],
+        "answer": "Kein Problem!"
     },
     {
-        "keywords": ["graph"],
-        "answer": "rgensdfnsd_3"
+        "keywords": [
+            "kannst *du mir *Geld **geben",
+            "*Gebe *gib *mir **Geld",
+            "*Wie *bekomme *erhalte ich *Geld"
+        ],
+        "answer": "Um Geld zu erhalten, können Sie bei der Deutschen Bank arbeiten gehen."
     },
     {
-        "keywords": ["geld gemacht"],
-        "answer": "rgensdfnsd_3"
+        "keywords": [
+            "***hallo",
+            "***hi"
+        ],
+        "answer": [
+            "Hallo! Wie kann ich Ihnen helfen?",
+            "Hallo! Fragen Sie mich etwas!",
+            "Hi! Fragen Sie mich etwas!"
+        ]
     },
     {
-        "keywords": ["kontostand"],
-        "answer": "rgensdfnsd_4"
+        "keywords": [
+            "wie *geht **gehts es **dir"
+        ],
+        "answer": [
+            "Meine Schaltkreise fühlen sich nach 230 Volt an. Danke der Nachfrage!",
+            "Ich fühle die Elektronen durch mich fließen.",
+            "Mein Prozessor überhitzt vor Freude!",
+            "Ich bin nur ein virtueller Assistent und kann daher nicht fühlen.",
+            "Als KI-Sprachmodell habe ich keine eigenen Emotionen oder Gefühle, da ich lediglich ein Computerprogramm bin, das dazu entwickelt wurde, Texte zu verstehen und darauf basierend Informationen bereitzustellen."
+        ]
     },
     {
-        "keywords": ["mein geld"],
-        "answer": "rgensdfnsd_4"
+        "keywords": [
+            "Wie **heißt **du",
+            "Was ist *dein *name"
+        ],
+        "answer": "Ich bin Charlie, Ihr virtueller Banking-Assistent."
     },
     {
-        "keywords": ["abbuchungen"],
-        "answer": "rgensdfnsd_5"
+        "keywords": [
+            "Wie **heiße **ich",
+            "Was ist **mein **name"
+        ],
+        "answer": "Das weiß ich leider nicht, ich kann Ihnen nur Informationen über Ihr Konto und die Bank geben."
     },
     {
-        "keywords": ["auszahlen"],
-        "answer": "rgensdfnsd_5"
+        "keywords": [
+            "Was *machst *du",
+            "*Was *bist *du"
+        ],
+        "answer": "Ich bin Charlie, Ihr virtueller Banking-Assistent. Fragen Sie mich etwas!"
+    },
+    {
+        "keywords": [
+            "Was ist mein *aktueller ***Kontostand",
+            "Wie viel **Geld *habe *ich"
+        ],
+        "function": "kontostand"
+    },
+    {
+        "keywords": [
+            "*Was ist eine **Aktie"
+        ],
+        "answer": "Eine Aktie ist ein Wertpapier, das den Anteil an einer Aktiengesellschaft repräsentiert. Der Wert einer Aktie hängt von der wirtschaftlichen Lage und den Erwartungen der Anleger ab. Aktien können an Börsen gekauft und verkauft werden."
+    },
+    {
+        "keywords": [
+            "Zeige mir **statistiken zu den *meist *gekauften **Aktien"
+        ],
+        "answer": "Hier sind einige Statistiken zu den meistgehandelten Aktien:<br><b> - BYD:</b> Kurs 31,00€, Performance +3,21%, Umsatz 3.478.559€1<br><b> - ASML Holding:</b> Kurs 559,40€, Performance -2,85%, Umsatz 2.383.189€1<br><b> - NVIDIA:</b> Kurs 409,65€, Performance -1,41%, Umsatz 2.184.142€1<br><b> - Deutsche Lufthansa:</b> Kurs 6,9610€, Performance -2,30%, Umsatz 1.815.540€1<br><b> - Shell:</b> Kurs 32,45€, Performance +0,43%, Umsatz 1.310.117€1"
+    },
+    {
+        "keywords": [
+            "Was *kann ich mit meinem **Bankkonto **machen",
+            "*Welche **Dienstleistungen *bietet die *Bank"
+        ],
+        "answer": "Sie können Ihr Bankkonto für verschiedene Dienstleistungen nutzen, einschließlich Überweisungen, Kontoauszüge und Zahlungen. Wie kann ich Ihnen behilflich sein?"
+    },
+    {
+        "keywords": [
+            "Wie **ändere ich mein ***Passwort",
+            "Kann ich mein **Passwort **zurücksetzen"
+        ],
+        "answer": "Um Ihr Passwort zu ändern oder zurückzusetzen, gehen Sie in die Einstellungen Ihres Online-Bankings."
+    },
+    {
+        "keywords": [
+            "*Was sind die **Kreditzinsen",
+            "Wie *funktioniert der **Kredit **Prozess",
+            "Was **kostet ein ***Kredit"
+        ],
+        "answer": "Die Kreditzinsen variieren je nach Art des Kredits. Der Kreditprozess beinhaltet die Antragstellung, Prüfung und Genehmigung."
+    },
+    {
+        "keywords": [
+            "Wie *beantrage *ich **eine **Kreditkarte",
+            "Kann *ich **eine **Kreditkarte **online **beantragen"
+        ],
+        "answer": "Sie können eine Kreditkarte online beantragen, indem Sie das entsprechende Formular ausfüllen."
+    },
+    {
+        "keywords": [
+            "Gibt *es **Gebühren **für **Überweisungen",
+            "Wie *viel **kostet **eine **Überweisung"
+        ],
+        "answer": "Die Gebühren für Überweisungen können variieren. Es hängt von der Art der Überweisung und dem Ziel ab."
+    },
+    {
+        "keywords": [
+            "Was *sind **Banken",
+            "*Was *ist eine **Bank",
+            "Erkläre **Deutsche **Bank"
+        ],
+        "answer": "Banken sind Finanzinstitute, die verschiedene Finanzdienstleistungen anbieten, darunter Einlagen, Kredite und Zahlungsabwicklung. Die Deutsche Bank ist eine deutsche Großbank und eines der größten Finanzinstitute in Europa."
+    },
+    {
+        "keywords": [
+            "*Wie *eröffne ich ein **Bankkonto",
+            "*Konto bei *Deutsche *Bank *eröffnen"
+        ],
+        "answer": "Um ein Bankkonto zu eröffnen, besuchen Sie eine Filiale der Deutschen Bank oder nutzen Sie deren Online-Anmeldeverfahren. Sie benötigen üblicherweise Ausweisdokumente und eine Einzahlung, um ein Konto zu eröffnen."
+    },
+    {
+        "keywords": [
+            "Welche **Arten von **Bankkonten gibt es",
+            "**Arten von *Konten bei *Deutsche *Bank"
+        ],
+        "answer": "Es gibt verschiedene Arten von Bankkonten, darunter Girokonten, Sparkonten, Geschäftskonten und Festgeldkonten. Bei der Deutschen Bank können Sie je nach Ihren Bedürfnissen verschiedene Arten von Konten eröffnen."
+    },
+    {
+        "keywords": [
+            "Was ist *Online **Banking",
+            "Erklären Sie *Online **Banking bei *Deutsche Bank"
+        ],
+        "answer": "Online-Banking ist ein Service, der es Ihnen ermöglicht, Ihre Bankgeschäfte über das Internet zu erledigen. Bei der Deutschen Bank bietet Online-Banking den Zugriff auf Kontoinformationen, Überweisungen und elektronische Abrechnungen."
+    },
+    {
+        "keywords": [
+            "Wie **sicher ist *Online *Banking",
+            "**Sicherheit von *Online *Banking bei Deutsche Bank"
+        ],
+        "answer": "Online-Banking bei der Deutschen Bank ist sicher und verwendet Verschlüsselungstechnologien, um Ihre Daten zu schützen. Es ist jedoch wichtig, sicherzustellen, dass Sie sichere Passwörter verwenden und vorsichtig mit Ihren Anmeldedaten umgehen."
+    },
+    {
+        "keywords": [
+            "*Was sind *Zinsen auf **Spareinlagen",
+            "*Zinssätze bei Deutsche *Bank *Sparkonten"
+        ],
+        "answer": "Die Zinsen auf Spareinlagen hängen von verschiedenen Faktoren ab und können sich ändern. Bei der Deutschen Bank variieren die Zinssätze für Sparprodukte. Sie sollten die aktuellen Zinssätze bei der Bank erfragen."
+    },
+    {
+        "keywords": [
+            "*Was ist der ***Bausparvertrag **Bauspar *vertrag",
+            "Erklärung erkläre ***Bausparvertrag **Bauspar *vertrag"
+        ],
+        "answer": "Ein Bausparvertrag ist eine spezielle Art von Sparvertrag, der darauf abzielt, Ihnen beim Kauf oder Bau eines Eigenheims zu helfen. Bei einem Bausparvertrag sparen Sie über einen bestimmten Zeitraum Geld, und in der Zukunft haben Sie die Möglichkeit, ein zinsgünstiges Darlehen für Wohnzwecke aufzunehmen. Dieser Vertrag ist in der Regel eine langfristige finanzielle Verpflichtung, die dazu dient, den Erwerb von Immobilien zu erleichtern."
+    },
+    {
+        "keywords": [
+            "*Was ist ein ***Sparvertrag **spar *vertrag",
+            "Erklärung *erkläre ***Sparvertrag **spar *vertrag",
+            "*Definiere ***Sparvertrag **spar *vertrag",
+            "Beschreibe ***Sparvertrag **spar *vertrag"
+        ],
+        "answer": "Ein Sparvertrag ist eine Vereinbarung zwischen einer Person und einer Bank oder einem Finanzinstitut. In einem Sparvertrag verpflichtet sich die Person, regelmäßig Geld auf ein spezielles Konto einzuzahlen, das als Sparkonto bezeichnet wird. Das Geld wird zu einem vorher festgelegten Zinssatz verzinst. Sparverträge dienen dazu, Geld über einen bestimmten Zeitraum zu sparen, sei es für kurzfristige Anschaffungen, Notfälle oder langfristige finanzielle Ziele. Sie bieten eine sichere Möglichkeit, Geld anzulegen und zu vermehren, da sie im Allgemeinen niedriges Risiko und einfache Zugriffsmöglichkeiten bieten."
+    },
+    {
+        "keywords": [
+            "*willst du *mit *mir **essen **gehen"
+        ],
+        "answer": "Sie haben leider zu wenig Geld auf Ihrem Konto."
     }
 ]

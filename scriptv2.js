@@ -2,6 +2,10 @@ let chatHistory = document.querySelector("#chatHistory");
 let input = document.querySelector("#input");
 input.focus();
 
+var userdata = {
+    money: 4807
+}
+
 var json;
 fetch("data.json").then(v => v.json()).then(v => {
     json = v;
@@ -49,8 +53,8 @@ begin("Wie kann ich dir helfen?")
  * @param {string} input 
  */
 function evaluate(input) {
-    let words = input.toLowerCase();
-    words = words.split(" ");
+    let words = input.toLowerCase().split(" ");
+    input = input.toLowerCase();
     let probabilities = [];
     json.forEach(element => {
         let bestP = 0;
@@ -81,18 +85,29 @@ function evaluate(input) {
 
     if (max > 3) {
         if (json[index].answer != undefined) {
-            answer(json[index].answer);
+            if (json[index].answer.constructor == [].constructor) {
+                answer(json[index].answer[Math.floor(Math.random() * json[index].answer.length)]);
+            } else {
+                answer(json[index].answer);
+            }
             begin();
         } else if (json[index].function != undefined) {
             window[json[index].function](input);
         }
     } else {
-        begin("Ich habe dich leider nicht verstanden.");
+        let answers = [
+            "Ich habe Sie leider nicht verstanden.",
+            "Ich habe Ihre Frage leider nicht verstanden.",
+            "Ich konnte Ihre Aussage leider nicht nachvollziehen.",
+            "Ihre Aussage war für mich leider unklar.",
+            "Damit kann ich ihnen leider nicht helfen."
+        ]
+        begin(answers[Math.floor(Math.random() * answers.length)]);
     }
     console.log(json[index]);
 }
 
-
+//#region levenshtein
 function levenshteinIncludes(array, searchElement, maxProb) {
     let incl = false;
     for (let i = 0; i < array.length; i++) {
@@ -127,28 +142,71 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
     }
     return track[str2.length][str1.length];
 };
+//#endregion
 
 async function uberweisung(input) {
     let words = input.split(" ");
+    words = words.filter(v => v != "mein" && v != "meine" && v != "meinen");
 
+    answer("Gerne, ich kann Ihnen beim Überweisungsprozess assistieren!")
     let iban = null;
     if (words.includes("an")) {
         iban = words[words.indexOf("an") + 1];
-        if ((await ask(`Wollen Sie an die IBAN <b>${iban}</b> überweisen? (Ja/Nein)`)).toLowerCase() != "ja") {
-            iban = await ask("An welche IBAN wollen Sie überweisen?");
+        if (!/\d/.test(iban)) {
+            iban = await ask(`Wie lautet die IBAN vom Kontakt "${iban}"?`);
+            while (!/\d/.test(iban)) {
+                switch (Math.floor(Math.random() * 3)) {
+                    case 0:
+                        iban = await ask("Das ist keine valide IBAN. Bitte geben Sie die IBAN an, an die Sie überweisen wollen.");
+                        break;
+                    case 1:
+                        iban = await ask("Bitte geben Sie eine valide IBAN an.");
+                        break;
+                    case 2:
+                        iban = await ask("Diese IBAN ist leider nicht valide. Bitte geben Sie eine valide IBAN an, an die Sie überweisen wollen.");
+                        break;
+                    default:
+                        iban = await ask("Das ist keine valide IBAN. Bitte geben Sie die IBAN an, an die Sie überweisen wollen.");
+                        break;
+                }
+            }
+        } else {
+            if ((await ask(`Wollen Sie an die IBAN <b>${iban}</b> überweisen? (Ja/Nein)`)).toLowerCase() != "ja") {
+                iban = await ask("An welche IBAN wollen Sie Geld überweisen?");
+            }
         }
     } else {
         iban = await ask("An welche IBAN wollen Sie überweisen?");
     }
 
-    let betrag = words.find(v=>v.includes("€"));
-    if (betrag == undefined) {
-        betrag = await ask("Welchen Betrag wollen Sie überweisen? (in €)", "number");
+    let betrag = words.find(v => (v.includes("€") && v != "€") || (v.includes("euro") && v != "euro"));
+    if (betrag == undefined || betrag == "" || betrag == "€") {
+        if (words.includes("euro")) {
+            betrag = words[words.indexOf("euro") - 1];
+        } else if (words.includes("€")) {
+            betrag = words[words.indexOf("€") - 1];
+        } else {
+            betrag = await ask("Welchen Betrag in Euro wollen Sie überweisen?", "number");
+        }
     }
-    if (confirm(`Wollen Sie wirklich ${betrag} an ${iban} überweisen?\nDAS ÜBERWEISEN VON GELD IST UNWIEDERUFLICH!`)) {
-        answer(`Es wurden <b>${betrag}</b> an <b>${iban}</b> überwiesen.`, undefined, "#b20707")
+    betrag = betrag.replaceAll("€", "");
+    betrag = betrag.replaceAll("euro", "");
+    console.log(betrag);
+    betrag = Number(betrag);
+    while (betrag > userdata.money) {
+        betrag = await ask(`Der Betrag von ${betrag}€ übersteigt Ihren aktuellen Kontostand von ${userdata.money}€.<br>Wie viel Geld wollen Sie überweisen?`, "number");
+    }
+
+    if (confirm(`Wollen Sie wirklich ${betrag}€ an ${iban} überweisen?\nDas Überweisen von Geld ist unwiderruflich!`)) {
+        answer(`Es wurden <b>${betrag}€</b> an die IBAN <b>${iban}</b> überwiesen.`, undefined, "#7f7f7f");
+        userdata.money -= betrag;
     } else {
         answer("Die Überweisung wurde abgebrochen.")
     }
     begin();
+}
+
+function kontostand(input) {
+    answer(`Ihr aktueller Kontostand liegt bei <b>${userdata.money}€.</b>`)
+    begin()
 }
