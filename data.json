@@ -1,73 +1,58 @@
 [
     {
-        "keywords": ["überweisung"],
+        "keywords": ["**Überweise Geld an die"],
         "function": "uberweisung"
     },
-
     {
-        "keywords":["überwiesen"],
-        "answer":"rgensdfnsd"
+        "keywords": ["Wie kann ich ein *Konto bei der Postbank *eröffnen"],
+        "answer": "Normalerweise können Sie ein Konto bei der Postbank eröffnen, indem Sie ihre Website besuchen und den Anweisungen für die Kontoeröffnung folgen. Sie werden wahrscheinlich aufgefordert, persönliche Informationen und Dokumente bereitzustellen."
     },
-
     {
-        "keywords":["überweisen"],
-        "answer":"rgensdfnsd"
+        "keywords": ["Was sind die *aktuellen *Zinssätze für *Sparbücher bei der Postbank"],
+        "answer": "Die aktuellen Zinssätze können variieren und es ist am besten, die offizielle Website der Postbank oder ihren Kundendienst zu kontaktieren, um die genauesten Informationen zu erhalten. "
     },
-
     {
-        "keywords":["investieren"],
-        "answer": "rgensdfnsd_2"
+        "keywords": ["Wie kann ich meine *PIN für mein Postbank *Konto *ändern"],
+        "answer": "In der Regel können Sie Ihre PIN in der Online-Banking-Schnittstelle ändern oder Sie müssen möglicherweise den Kundendienst kontaktieren, um dies zu tun."
     },
-
     {
-        "keywords":["investition"],
-        "answer":"rgensdfnsd_2"
+        "keywords": ["Wie kann ich Geld von meinem Postbank-Konto auf ein anderes Konto überweisen"],
+        "answer": "Geldüberweisungen können normalerweise über das Online-Banking-Portal der Postbank durchgeführt werden. Sie müssen die Kontodetails des Empfängers eingeben und den Betrag angeben, den Sie überweisen möchten."
     },
-
     {
-        "keywords":["investement"],
-        "answer":"rgensdfnsd_2"
+        "keywords": ["Wie kann ich den *Kontostand meines Postbank *Kontos *überprüfen"],
+        "answer": "Ihr Kontostand kann in der Regel durch Anmeldung in Ihrem Online-Banking-Konto eingesehen werden."
     },
-
     {
-        "keywords":["statistik"],
+        "keywords": ["statistik"],
         "answer": "rgensdfnsd_3"
     },
-
     {
-        "keywords":["übersicht"],
-        "answer":"rgensdfnsd_3"
+        "keywords": ["übersicht"],
+        "answer": "rgensdfnsd_3"
     },
-
     {
-        "keywords":["graph"],
-        "answer":"rgensdfnsd_3"
+        "keywords": ["graph"],
+        "answer": "rgensdfnsd_3"
     },
-
     {
-        "keywords":["geld gemacht"],
-        "answer":"rgensdfnsd_3"
+        "keywords": ["geld gemacht"],
+        "answer": "rgensdfnsd_3"
     },
-
     {
-        "keywords":["kontostand"],
+        "keywords": ["kontostand"],
         "answer": "rgensdfnsd_4"
     },
-
     {
-        "keywords":["mein geld"],
-        "answer":"rgensdfnsd_4"
+        "keywords": ["mein geld"],
+        "answer": "rgensdfnsd_4"
     },
-
     {
-        "keywords":["abbuchungen"],
+        "keywords": ["abbuchungen"],
         "answer": "rgensdfnsd_5"
     },
-
     {
-        "keywords":["auszahlen"],
-        "answer":"rgensdfnsd_5"
+        "keywords": ["auszahlen"],
+        "answer": "rgensdfnsd_5"
     }
-
 ]
-

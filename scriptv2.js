@@ -5,7 +5,6 @@ input.focus();
 var json;
 fetch("data.json").then(v => v.json()).then(v => {
     json = v;
-    evaluate("Mache eine Überweisung");
 });
 
 function answer(text, mode = "left", color) {
@@ -50,14 +49,22 @@ begin("Wie kann ich dir helfen?")
  */
 
 function evaluate(input) {
-    let words = input.toLocaleLowerCase();
+    let words = input.toLowerCase();
     words = words.split(" ");
     let probabilities = [];
     json.forEach(element => {
         let p = 0;
         words.forEach(word => {
-            if (levenshteinIncludes(element.keywords, word, 0.3)) {
-                p++;
+            let incl = levenshteinIncludes(element.keywords[0].replaceAll("*", "").toLowerCase().split(" "), word, 0.3);
+            if (incl[0]) {
+                let key = element.keywords[0].toLowerCase().split(" ")[incl[1]];
+                let a = 1;
+                while (key.startsWith("*")) {
+                    key = key.substring(1);
+                    a++;
+                }
+
+                p += a;
             }
         });
         probabilities.push(p);
@@ -65,13 +72,13 @@ function evaluate(input) {
     let max = Math.max(...probabilities);
     let index = probabilities.indexOf(max);
 
-    if (max > 0) {
+    if (max > 3) {
         if (json[index].answer != undefined) {
             answer(json[index].answer);
+            begin();
         } else if (json[index].function != undefined) {
             window[json[index].function](input);
         }
-        begin();
     } else {
         begin("Ich habe dich leider nicht verstanden.");
     }
@@ -81,12 +88,15 @@ function evaluate(input) {
 
 function levenshteinIncludes(array, searchElement, maxProb) {
     let incl = false;
-    array.forEach(element => {
+    for (let i = 0; i < array.length; i++) {
+        const element = array[i];
+
         if (levenshteinDistance(element, searchElement) / element.length < maxProb) {
-            incl = true;
+            return [true, i];
         }
-    });
-    return incl;
+    }
+
+    return [false, -1];
 }
 
 const levenshteinDistance = (str1 = '', str2 = '') => {
@@ -111,17 +121,25 @@ const levenshteinDistance = (str1 = '', str2 = '') => {
     return track[str2.length][str1.length];
 };
 
-async function uberweisung(input,vars={}) {
-    let iban = vars["iban"];
-    if (iban == undefined) {
+async function uberweisung(input, vars = {}) {
+    let words = input.split(" ");
+
+    let iban = null;
+    if (words.includes("an")) {
+        iban = words[words.indexOf("an") + 1];
+        if ((await ask(`Wollen Sie an die IBAN ${iban} überweisen? (Ja/Nein)`)).toLowerCase() != "ja") {
+            iban = await ask("An welche IBAN wollen Sie überweisen?");
+        }
+    } else {
         iban = await ask("An welche IBAN wollen Sie überweisen?");
     }
+
     let betrag = vars["betrag"];
     if (betrag == undefined) {
         betrag = await ask("Welchen Betrag wollen Sie überweisen?");
     }
     if (confirm(`Wollen Sie wirklich ${betrag} an ${iban} überweisen?\nDAS ÜBERWEISEN VON GELD IST UNWIEDERUFLICH!`)) {
-        answer(`Es wurden <b>${betrag}</b> an <b>${iban}</b> überwiesen.`, undefined, "red")
+        answer(`Es wurden <b>${betrag}</b> an <b>${iban}</b> überwiesen.`, undefined, "#b20707")
     } else {
         answer("Die Überweisung wurde abgebrochen.")
     }
