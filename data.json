@@ -2,5 +2,72 @@
     {
         "keywords": ["überweisung"],
         "answer": "rgensdfnsd"
+    },
+
+    {
+        "keywords":["überwiesen"],
+        "answer":"rgensdfnsd"
+    },
+
+    {
+        "keywords":["überweisen"],
+        "answer":"rgensdfnsd"
+    },
+
+    {
+        "keywords":["investieren"],
+        "answer": "rgensdfnsd_2"
+    },
+
+    {
+        "keywords":["investition"],
+        "answer":"rgensdfnsd_2"
+    },
+
+    {
+        "keywords":["investement"],
+        "answer":"rgensdfnsd_2"
+    },
+
+    {
+        "keywords":["statistik"],
+        "answer": "rgensdfnsd_3"
+    },
+
+    {
+        "keywords":["übersicht"],
+        "answer":"rgensdfnsd_3"
+    },
+
+    {
+        "keywords":["graph"],
+        "answer":"rgensdfnsd_3"
+    },
+
+    {
+        "keywords":["geld gemacht"],
+        "answer":"rgensdfnsd_3"
+    },
+
+    {
+        "keywords":["kontostand"],
+        "answer": "rgensdfnsd_4"
+    },
+
+    {
+        "keywords":["mein geld"],
+        "answer":"rgensdfnsd_4"
+    },
+
+    {
+        "keywords":["abbuchungen"],
+        "answer": "rgensdfnsd_5"
+    },
+
+    {
+        "keywords":["auszahlen"],
+        "answer":"rgensdfnsd_5"
     }
+
 ]
+
