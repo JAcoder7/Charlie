@@ -8,19 +8,19 @@
     },
     {
         "keywords": [
-            "Wie kann ich ein *Konto bei der Postbank *eröffnen"
+            "Wie kann ich ein *Konto bei der Bank *eröffnen"
         ],
-        "answer": "Sie können ein Konto bei der Postbank eröffnen, indem Sie ihre Website besuchen und den Anweisungen für die Kontoeröffnung folgen. Sie werden wahrscheinlich aufgefordert, persönliche Informationen und Dokumente bereitzustellen."
+        "answer": "Sie können ein Konto bei der Bank eröffnen, indem Sie ihre Website besuchen und den Anweisungen für die Kontoeröffnung folgen. Sie werden wahrscheinlich aufgefordert, persönliche Informationen und Dokumente bereitzustellen."
     },
     {
         "keywords": [
-            "Was sind die *aktuellen *Zinssätze für *Sparbücher bei der Postbank"
+            "Was sind die *aktuellen *Zinssätze für *Sparbücher bei der Bank"
         ],
-        "answer": "Die aktuellen Zinssätze können variieren und es ist am besten, die offizielle Website der Postbank oder ihren Kundendienst zu kontaktieren, um die genauesten Informationen zu erhalten. "
+        "answer": "Die aktuellen Zinssätze können variieren und es ist am besten, die offizielle Website der Bank oder ihren Kundendienst zu kontaktieren, um die genauesten Informationen zu erhalten. "
     },
     {
         "keywords": [
-            "Wie kann ich meine *PIN für mein Postbank *Konto *ändern"
+            "Wie kann ich meine *PIN für mein Bank *Konto *ändern"
         ],
         "answer": "In der Regel können Sie Ihre PIN in der Online-Banking-Schnittstelle ändern oder Sie müssen möglicherweise den Kundendienst kontaktieren, um dies zu tun."
     },
@@ -28,19 +28,19 @@
         "keywords": [
             "*Wie *überweise ich *Geld",
             "Kann *ich **Geld an jemanden **senden",
-            "*Wie kann ich *Geld von meinem Postbank-Konto auf ein anderes Konto *überweisen"
+            "*Wie kann ich *Geld von meinem Bank-Konto auf ein anderes Konto *überweisen"
         ],
         "answer": "Sie können Geld überweisen, indem Sie sich in Ihr Konto einloggen und die entsprechende Option auswählen. Sie müssen die Kontodetails des Empfängers eingeben und den Betrag angeben, den Sie überweisen möchten."
     },
     {
         "keywords": [
-            "Wie kann ich den *Kontostand meines Postbank *Kontos *überprüfen"
+            "Wie kann ich den *Kontostand meines Bank *Kontos *überprüfen"
         ],
         "answer": "Ihr Kontostand kann in der Regel durch Anmeldung in Ihrem Online-Banking-Konto eingesehen werden."
     },
     {
         "keywords": [
-            "*Wo ist die *nächste Postbank *Bank **Filiale"
+            "*Wo ist die *nächste Bank *Bank **Filiale"
         ],
         "answer": "Die nächste Filiale befindet sich in der Adolph-Prior-Straße 11."
     },
